@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "b360f8c5-5f97-4efe-83b6-21ce79eefdf3",
+		"name": "Evershop Demo Site Testing",
+		"description": "For the Manual Testing Assessment-1. I have tested the search functionality as required as well as checking out functionality on the API level.\n\nMahir Shadid\n\nmahir.shadid@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23199592",
+		"_collection_link": "https://www.postman.com/interstellar-astronaut-964306/workspace/sqa-test-ws-1/collection/23199592-b360f8c5-5f97-4efe-83b6-21ce79eefdf3?action=share&source=collection_link&creator=23199592"
+	},
+	"item": [
+		{
+			"name": "Searching for the shoe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Nike React Phantom Run Flyknit 2 is listed in the response\", function () {\r",
+							"    var responseBody = pm.response.text();\r",
+							"    \r",
+							"    pm.expect(responseBody).to.include('<div class=\"product-name product-list-name mt-4 mb-1\"><a href=\"/men/nike-react-phantom-run-flyknit-2-182\" class=\"font-bold hover:underline h5\"><span>Nike react phantom run flyknit 2</span></a></div>');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demo.evershop.io/search?keyword=Nike react phantom run flyknit 2",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"evershop",
+						"io"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Nike react phantom run flyknit 2"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Searching for the shoe to know if it exists."
+			},
+			"response": []
+		},
+		{
+			"name": "Selecting shoe for the cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var cartId = jsonData.data.cartId;\r",
+							"pm.globals.set(\"cartId\", cartId);\r",
+							"console.log(\"Cart ID stored:\", cartId);\r",
+							"\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Product successfully added to cart\", function () {\r",
+							"    var responseData = pm.response.json();\r",
+							"    \r",
+							"\r",
+							"    pm.expect(responseData.data.item.product_name).to.eql(\"Nike react phantom run flyknit 2\");\r",
+							"    pm.expect(responseData.data.item.product_id).to.eql(181);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\t\"sku\":\"NJC48508-Black-S\",\r\n        \"qty\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://demo.evershop.io/api/cart/mine/items",
+				"description": "Selecting shoe by detecting its \"SKU\" from Previous request as required."
+			},
+			"response": []
+		},
+		{
+			"name": "Verify cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Nike react phantom run flyknit 2 product is present in HTML body\", function () {\r",
+							"    // Get the HTML response body as a string\r",
+							"    var responseBody = pm.response.text();\r",
+							"\r",
+							"    // Check if the product \"Nike react phantom run flyknit 2\" is present in the response\r",
+							"    pm.expect(responseBody).to.include(\"Nike react phantom run flyknit 2\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://demo.evershop.io/cart",
+				"description": "Verifying the cart after selecting the shoe."
+			},
+			"response": []
+		},
+		{
+			"name": "Contact info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Email exists in the response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data).to.have.property('email');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"mahir.shadid@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://demo.evershop.io/api/carts/{{cartId}}/contacts",
+				"description": "Adding Contact Info"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Shipping/Billing Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains all required keys\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    var topLevelKeys = [\r",
+							"        'data'\r",
+							"    ];\r",
+							"\r",
+							"    topLevelKeys.forEach(function(key) {\r",
+							"        pm.expect(jsonData).to.have.property(key);\r",
+							"    });\r",
+							"\r",
+							"    if (jsonData.data) {\r",
+							"        var dataKeys = [\r",
+							"            'cart_address_id',\r",
+							"            'uuid',\r",
+							"            'full_name',\r",
+							"            'postcode',\r",
+							"            'telephone',\r",
+							"            'country',\r",
+							"            'province',\r",
+							"            'city',\r",
+							"            'address_1',\r",
+							"            'address_2'\r",
+							"        ];\r",
+							"        \r",
+							"        dataKeys.forEach(function(key) {\r",
+							"            pm.expect(jsonData.data).to.have.property(key);\r",
+							"        });\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n        \"address\": {\r\n        \"full_name\": \"mahir\",\r\n        \"postcode\": \"3243\",\r\n        \"telephone\": \"010109\",\r\n        \"country\": \"CN\",\r\n        \"province\": \"CN-42\",\r\n        \"city\": \"ctg\",\r\n        \"address_1\": \"ctg\"\r\n        },\r\n        \"type\": \"shipping\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://demo.evershop.io/api/carts/{{cartId}}/addresses",
+				"description": "Trying to add ship/bill address."
+			},
+			"response": []
+		},
+		{
+			"name": "Add shippingMethods",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains the required shipping method 'code'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(jsonData).to.have.property('data');\r",
+							"\r",
+							"    pm.expect(jsonData.data).to.have.property('method');\r",
+							"\r",
+							"    pm.expect(jsonData.data.method).to.have.property('code');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"method_code\":\"7d0aba1a-fa8a-4b37-8b0c-5162cb34997e\"\r\n    // Standard Delivery\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://demo.evershop.io/api/carts/{{cartId}}/shippingMethods",
+				"description": "Adding shipping methods."
+			},
+			"response": []
+		},
+		{
+			"name": "Add PaymentMethods",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains correct payment 'code' and 'name' within 'method'\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property('data');\r",
+							"    pm.expect(jsonData.data).to.have.property('method');\r",
+							"    pm.expect(jsonData.data.method).to.have.property('code', 'cod');\r",
+							"    pm.expect(jsonData.data.method).to.have.property('name', 'Cash On Delivery');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"method_code\":\"cod\",\r\n    \"method_name\": \"Cash On Delivery\"\r\n    // COD\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://demo.evershop.io/api/carts/{{cartId}}/paymentMethods",
+				"description": "Adding payment methods."
+			},
+			"response": []
+		},
+		{
+			"name": "Checking Out",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://demo.evershop.io/checkout",
+				"description": "Getting checkout details"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "e74fc503-caf0-4e3a-a02a-027556553287",
+		"name": "Live-Test-1 (Mahir)",
+		"description": "mahir.shadid@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23199592",
+		"_collection_link": "https://www.postman.com/interstellar-astronaut-964306/workspace/sqa-test-ws-1/collection/23199592-e74fc503-caf0-4e3a-a02a-027556553287?action=share&source=collection_link&creator=23199592"
+	},
+	"item": [
+		{
+			"name": "User Registration Endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mahirshadid2\",\r\n    \"password\": \"m123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://ria.zayedabdullah.com/ostad/simpleblog/api/v1/auth/register/"
+			},
+			"response": []
+		},
+		{
+			"name": "Blog List Endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "mahirshadid",
+						"password": "m123"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://ria.zayedabdullah.com/ostad/simpleblog/api/v1/blogs/"
+			},
+			"response": []
+		},
+		{
+			"name": "Blog Creation Endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "mahirshadid2",
+						"password": "m123"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Postman API testing\",\r\n    \"content\":\"Postman API test kore, ami eita enjoy kori\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://ria.zayedabdullah.com/ostad/simpleblog/api/v1/blogs/"
+			},
+			"response": []
+		}
+	]
+}
