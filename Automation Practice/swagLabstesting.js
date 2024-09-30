@@ -26,12 +26,15 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
             await addToCartButton.click();
             let removeFromCartButton = await driver.findElement(By.name('remove-sauce-labs-fleece-jacket'));
             if(removeFromCartButton){
+                console.log('-------------------------------');
                 console.log('Item added to the cart successfully!');
             }else{
+                console.log('-------------------------------');
                 console.log('Item adding failed!');
             }
             
         } else {
+            console.log('-------------------------------');
             console.log('Item not available!');
         }
 
@@ -42,9 +45,11 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
             let itemInCart = await driver.findElement(By.id('item_5_title_link')).getText();
             let price = await driver.findElement(By.css('[data-test="inventory-item-price"]')).getText();
             if (itemInCart && price) {
+                console.log('-------------------------------');
                 console.log('Cart Item: ' + itemInCart);
                 console.log('Price: ' + price);
             }else{
+                console.log('-------------------------------');
                 console.log('Cart empty!')
             }
         }
@@ -73,19 +78,28 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
         let total = await driver.findElement(By.css('[data-test="total-label"]')).getText(); 
 
         if(citem && cprice && cpi && si && total){
+            console.log('-------------------------------');
+            console.log('Item Name: '+citem);
+            console.log('Item Price: '+cprice);
+            console.log('Payment Info: '+cpi);
+            console.log('Shipping Info: '+si);
+            console.log('In Total: '+total);
             let finishButton = await driver.findElement(By.id('finish'));
             await finishButton.click();
 
             let ch = await driver.findElement(By.css('[data-test="complete-header"]')).getText();
             if(ch === 'Thank you for your order!'){
+                console.log('-------------------------------');
                 console.log('Checkout Success!');
             }else{
+                console.log('-------------------------------');
                 console.log('Checkout failed!');
             }
 
         }
 
     } catch (error) {
+        console.log('-------------------------------');
         console.log('Something went wrong:', error);
     } finally {
         await driver.quit();
@@ -96,9 +110,18 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 /* 
 
 Login successful!
+-------------------------------
 Item added to the cart successfully!
+-------------------------------
 Cart Item: Sauce Labs Fleece Jacket
 Price: $49.99
+-------------------------------
+Item Name: Sauce Labs Fleece Jacket
+Item Price: $49.99
+Payment Info: SauceCard #31337
+Shipping Info: Free Pony Express Delivery!
+In Total: Total: $53.99
+-------------------------------
 Checkout Success!
 
 */
