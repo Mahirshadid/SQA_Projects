@@ -1,0 +1,21 @@
+{
+  "name": "parabanktesting",
+  "version": "1.0.0",
+  "main": "paraBankTesting.js",
+  "type": "module",
+  "scripts": {
+    "test": "node paraBankTesting.js",
+    "mocha-test": "mocha paraBankTestmocha.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.25.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "gitprac",
+  "version": "1.0.0",
+  "main": "gitPractice.js",
+  "scripts": {
+    "test": "node gitPractice.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

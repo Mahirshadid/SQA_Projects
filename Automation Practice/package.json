@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chromedriver": "^129.0.1",
+    "selenium-stealth": "^1.0.1",
+    "selenium-webdriver": "^4.25.0"
+  }
+}
