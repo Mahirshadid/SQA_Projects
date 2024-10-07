@@ -1,5 +1,3 @@
-![Alt text](E:/WhatsApp Image 2024-10-07 at 12.09.28 PM.jpeg)
-
 **SQA Projects Repository**
 
 Welcome to my Software Quality Assurance (SQA) Projects repository! This repository contains a collection of projects that demonstrate both manual and automated testing methodologies. The projects cover a range of tools, frameworks, and testing techniques that I've explored to ensure software quality and reliability.
