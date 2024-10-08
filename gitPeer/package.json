@@ -1,15 +1,42 @@
 {
   "name": "gitpeer",
   "version": "1.0.0",
+<<<<<<< Updated upstream
   "main": "index.js",
+=======
+  "main": "gitPractice.js",
+  "dependencies": {
+    "core-util-is": "^1.0.3",
+    "immediate": "^3.0.6",
+    "inherits": "^2.0.4",
+    "isarray": "^1.0.0",
+    "jszip": "^3.10.1",
+    "lie": "^3.3.0",
+    "pako": "^1.0.11",
+    "process-nextick-args": "^2.0.1",
+    "readable-stream": "^2.3.8",
+    "safe-buffer": "^5.1.2",
+    "selenium-webdriver": "^4.25.0",
+    "setimmediate": "^1.0.5",
+    "string_decoder": "^1.1.1",
+    "tmp": "^0.2.3",
+    "util-deprecate": "^1.0.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {},
+>>>>>>> Stashed changes
   "scripts": {
     "test": "node gitPractice.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< Updated upstream
   "description": "",
   "dependencies": {
     "selenium-webdriver": "^4.25.0"
   }
+=======
+  "description": ""
+>>>>>>> Stashed changes
 }
