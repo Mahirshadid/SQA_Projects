@@ -1,0 +1,12 @@
+{
+  "name": "pom",
+  "version": "1.0.0",
+  "main": "POMprac1.js",
+  "scripts": {
+    "test": "node POMprac1.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
