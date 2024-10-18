@@ -21,6 +21,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
+        // ToDo: define location for spec files here
         './test/specs/script.specs.js'
     ],
     // Patterns to exclude.
@@ -85,7 +86,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    // baseUrl: 'https://phptravels.com/demo/?__im-YaBRvtBE=10431301309386958013',
+    baseUrl: 'https://phptravels.com/demo',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 100000,
@@ -198,8 +199,9 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: async function (suite) {
+        await browser.url(this.baseUrl);
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
@@ -235,9 +237,8 @@ exports.config = {
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
      */
-    afterSuite: async function (suite) {
-        await browser.maximizeWindow();
-    },
+    // afterSuite: function (suite) {
+    // },
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
