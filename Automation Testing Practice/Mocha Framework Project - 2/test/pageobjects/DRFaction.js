@@ -15,6 +15,7 @@ class DRFactions {
         await DRFlocator.DemoReqFormInputs.number.setValue(num);
         await DRFlocator.DemoReqFormInputs.business.setValue(business);
         await DRFlocator.DemoReqFormInputs.email.setValue(email);
+        await DRFlocator.DemoReqFormSubmitButton.scrollIntoView();
         await DRFlocator.DemoReqFormInputs.verify;
     }
     async ClickSubmitButton(){

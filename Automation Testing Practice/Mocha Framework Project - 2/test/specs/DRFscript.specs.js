@@ -11,5 +11,5 @@ describe('Demo Request Form Fill Up', ()=>{
     it('Should Fill Up the form smoothly', async()=>{
         await DRFactions.InputsInsert(fn,ln,country,num,business,email);
         await DRFactions.ClickSubmitButton();
-    })
+    });
 })
