@@ -5,7 +5,7 @@ let userdata = {
     lastName: 'shadid',
     country: 'Bangladesh +880',
     phoneNumber: '1891789791',
-    password: '12345678',
+    Password: '12345678910',
     emailAddress: 'mysqatest7@gmail.com'
 };
 
@@ -16,7 +16,7 @@ describe('Sign Up Option', ()=>{
             userdata.firstName,
             userdata.lastName,
             userdata.emailAddress,
-            userdata.password,
+            userdata.Password,
             userdata.country,
             userdata.phoneNumber);
         await SignUpactions.clickSignUpButton();

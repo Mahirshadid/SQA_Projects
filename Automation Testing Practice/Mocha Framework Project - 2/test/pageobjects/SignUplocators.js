@@ -7,7 +7,7 @@ class SignUplocators {
             firstname: $('//input[@placeholder="First Name"]'),
             lastname: $('//input[@placeholder="Last Name"]'),
             email: $('//input[@placeholder="Email"]'),
-            password: $('//input[@placeholder="Password"]'),
+            password: $('//input[@type="password" and @placeholder="Password"]'),
             country: {
                 select: async (optionValue) => {
                     const countryDropdown = await $('//select[@name="country_id"]');

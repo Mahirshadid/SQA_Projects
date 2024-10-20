@@ -53,7 +53,7 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'firefox' // or "firefox", "microsoftedge", "safari"
     }],
 
     //
@@ -126,11 +126,12 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: [['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
-    }]],
+    // reporters: [['mochawesome', {
+    //     outputDir: 'mochawesome-report',
+    //     outputFileFormat: function(opts) { // optional
+    //         return `results-${opts.cid}.json`;
+    //     }
+    // }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

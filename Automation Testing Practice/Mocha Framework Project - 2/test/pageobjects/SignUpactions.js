@@ -4,7 +4,7 @@ class SignUpactions {
     async clickOnbutton(){
         await SignUplocators.signUpButton.click();
     }
-    async insertValues(firstName,lastName,emailAddress,password,country,phoneNumber){
+    async insertValues(firstName,lastName,emailAddress,Password,country,phoneNumber){
         await browser.waitUntil(async () => {
             return await SignUplocators.userInfo.firstname.isDisplayed();
         }, {
@@ -15,7 +15,7 @@ class SignUpactions {
         await SignUplocators.userInfo.firstname.setValue(firstName);
         await SignUplocators.userInfo.lastname.setValue(lastName);
         await SignUplocators.userInfo.email.setValue(emailAddress);
-        await SignUplocators.userInfo.password.setValue(password);
+        await SignUplocators.userInfo.password.setValue(Password);
         await SignUplocators.userInfo.country.select(country);
         await SignUplocators.userInfo.number.setValue(phoneNumber);
 
