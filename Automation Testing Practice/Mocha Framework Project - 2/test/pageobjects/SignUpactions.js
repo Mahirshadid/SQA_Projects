@@ -30,7 +30,7 @@ class SignUpactions {
         await browser.waitUntil(async () => {
             return await SignUplocators.ClickSignUp.isClickable();
         }, {
-            timeout: 15000,
+            timeout: 10000,
             timeoutMsg: 'Signup Button is not clickable'
         });
         await SignUplocators.ClickSignUp.click();
