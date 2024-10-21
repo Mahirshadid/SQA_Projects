@@ -3,10 +3,10 @@ const SignUpactions = require('../pageobjects/SignUpactions');
 let userdata = {
     firstName: 'mahir',
     lastName: 'shadid',
+    emailAddress: 'mysqatest7@gmail.com',
+    Password: '123456789',
     country: 'Bangladesh +880',
-    phoneNumber: '1891789791',
-    Password: '12345678910',
-    emailAddress: 'mysqatest7@gmail.com'
+    phoneNumber: '1891789791'
 };
 
 describe('Sign Up Option', ()=>{
