@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2784","Should Fill Up the form smoothly","","Tue Oct 22 19:21:58 GMT+06:00 2024","passed","Tue Oct 22 19:22:01 GMT+06:00 2024","","Demo Request Form Fill Up","",""
+"","21","Should smoothly handle the live chat feature","","Tue Oct 22 19:21:58 GMT+06:00 2024","passed","Tue Oct 22 19:21:58 GMT+06:00 2024","","Live chat Journey","",""
+"","60026","Should successfully sign up","","Tue Oct 22 19:21:58 GMT+06:00 2024","broken","Tue Oct 22 19:22:58 GMT+06:00 2024","","Sign Up Option","",""
+"","2025","Should redirect to the selected menu item","","Tue Oct 22 19:21:58 GMT+06:00 2024","passed","Tue Oct 22 19:22:00 GMT+06:00 2024","","Dashboard Dropdown Items","",""
