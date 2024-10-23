@@ -1,6 +1,6 @@
-This repository showcases an automation testing project using the Mocha WebdriverIO framework, targeting the live site PHPTravels. The project was created with a focus on testing a live environment without impacting real users.
+This repository showcases an automation testing project using the Mocha WebdriverIO framework, targeting the live site PHPTravels. The project was created with a focus on testing a live environment without impacting real users.  
 
-🛠️ Tech Stack
+🛠️ Tech Stack  
 Programming Language: JavaScript  
 Framework: Mocha  
 Automation Tool: WebdriverIO  
