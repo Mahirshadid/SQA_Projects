@@ -10,7 +10,7 @@
   },
   "version": "1.0.0",
   "description": "Testing the Magento Website",
-  "main": "wdio.conf.js",
+  "main": "index.js",
   "dependencies": {
     "abort-controller": "^3.0.0",
     "agent-base": "^7.1.1",
