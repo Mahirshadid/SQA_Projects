@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//span[@data-ui-id=\"page-title-wrapper\" and contains(text(),\"Create New Customer Account\")]"
+}

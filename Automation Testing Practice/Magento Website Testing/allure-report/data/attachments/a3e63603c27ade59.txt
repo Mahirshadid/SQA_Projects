@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//div[@for=\"password-confirmation\"]"
+}

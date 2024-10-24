@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1313","Should Handle Boundary values, Edge Cases","","Thu Oct 24 20:02:14 GMT+06:00 2024","passed","Thu Oct 24 20:02:15 GMT+06:00 2024","","Create Account Journey","",""
+"","2401","Should Redirect to Create Account Page","","Thu Oct 24 20:02:12 GMT+06:00 2024","passed","Thu Oct 24 20:02:14 GMT+06:00 2024","","Create Account Journey","",""
+"","1","Should Insert User Info in the Input Fields","","Thu Oct 24 20:02:14 GMT+06:00 2024","skipped","Thu Oct 24 20:02:14 GMT+06:00 2024","","Create Account Journey","",""
