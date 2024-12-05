@@ -10,15 +10,13 @@ The goal of these projects is to illustrate best practices in Software Quality A
 
 Testing Tools: Postman, Selenium, TestRail and so on  
 Languages: JavaScript  
-Frameworks: (Learning)  
+Frameworks: Mocha, WebdriverIO (Learning)  
 CI/CD: (Learning)  
 Other: Newman for Postman test automation, Allure for reporting  
 
 **Skills Demonstrated**
 
 API Testing  
-UI Automation  
-Load and Performance Testing (Learning)  
+UI Automation
 Test Case Design and Execution  
 Defect Logging and Reporting  
-Continuous Integration (CI) for automated testing (Learning)  
